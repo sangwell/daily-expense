@@ -1,14 +1,31 @@
+<div class="summary">
+  <div nz-row>
+    <div nz-col nzSpan="8">预算(总):<span>{{budget}}￥</span></div>
+    <div nz-col nzSpan="8">实际(总):<span>{{actualCounting}}￥</span></div>
+    <div nz-col nzSpan="8">达成率:<span>{{percent}}%</span></div>
+  </div>
+</div>
 <div class="container">
-    <div class="row">
-      <div>星期一</div>
-      <div>星期二</div>
-      <div>星期三</div>
-      <div>星期四</div>
-      <div>星期五</div>
-      <div>星期六</div>
-      <div>星期日</div>
-    </div>
-    <div class="row">
-      <div *ngFor="let item of days">{{item.day}}</div>
+  <div class="row">
+    <div class="week">星期一</div>
+    <div class="week">星期二</div>
+    <div class="week">星期三</div>
+    <div class="week">星期四</div>
+    <div class="week">星期五</div>
+    <div class="week">星期六</div>
+    <div class="week">星期日</div>
+  </div>
+  <!-- <div class="row">
+      <div *ngFor="let item of days">{{item}}</div>
+    </div> -->
+  <div *ngFor="let week of weeks" class="row">
+    <div *ngFor="let day of week" class="day">
+      <span class="day-index">
+        {{ day.index }}
+      </span>
+      <span class="day-counting">
+        {{day.nums}}{{day.nums?'￥':''}}
+      </span>
     </div>
   </div>
+</div>
